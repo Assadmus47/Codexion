@@ -14,6 +14,8 @@ int is_digit(char c);
 size_t	ft_str_to_size(const char *str, int *valid);
 int is_valid_scheduler(const char *str);
 int	parse_args(int argc, char **argv, size_t *values);
+/* time_utils.c */
+size_t	get_timestamp_ms(void);
 typedef struct s_simulation	t_simulation;
 
 typedef enum e_state

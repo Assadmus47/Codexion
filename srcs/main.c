@@ -7,6 +7,7 @@ int	main(int argc, char **argv)
 
 	if (!parse_args(argc, argv, values))
 		return (1);
+	printf("timestamp = %zu\n", get_timestamp_ms());
 	i = 0;
 	while (i < 7)
 	{
