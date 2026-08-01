@@ -21,6 +21,8 @@ typedef struct s_simulation	t_simulation;
 
 /* logging.c */
 void    log_message(t_simulation *sim, int coder_id, char *message);
+/* coder.c */
+void	*coder_routine(void *arg);
 
 typedef enum e_state
 {
@@ -52,6 +54,7 @@ typedef	struct	s_coder
 	t_dongle	*left_dongle;
 	t_dongle	*right_dongle;
 	t_simulation	*sim;
+	pthread_t		coder_thread;
 }	t_coder;
 
 

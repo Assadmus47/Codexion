@@ -24,5 +24,22 @@ int	main(int argc, char **argv)
 	}
 	log_message(&sim, 1, "is compiling");
 	pthread_mutex_destroy(&sim.log_mutex);
+
+	t_coder		coders[3];
+	pthread_t	threads[3];
+	int			j;
+	j = 0;
+	while (j < 3)
+	{
+		coders[j].id = j;
+		pthread_create(&threads[j], NULL, coder_routine, &coders[j]);
+		j++;
+	}
+	j = 0;
+	while (j < 3)
+	{
+		pthread_join(threads[j], NULL);
+		j++;
+	}
 	return (0);
 }
