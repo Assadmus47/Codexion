@@ -6,7 +6,7 @@
 | **2**   |✅| Parsing des 8 arguments (récupération brute, pas de validation encore) | 2-3h |
 | **3**   |✅| Validation stricte des arguments (entiers positifs, scheduler = fifo/edf exact, messages d'erreur) | 3h |
 | **4**   |✅| Design des structs (`coder_t`, `dongle_t`, `simulation_t`) — zéro globale | 3h |
-| **5**   | | Fonctions utilitaires de temps (timestamp ms, sleep précis) | 2h |
+| **5**   |✅| Fonctions utilitaires de temps (timestamp ms, sleep précis) | 2h |
 | **6**   | | Système de log thread-safe (mutex sur l'output, format imposé) | 2-3h |
 | **7**   | | Création des threads coders + lifecycle basique (create/join, boucle vide) | 3h |
 | **8**   | | Mutex par dongle + acquisition/relâchement basique (sans scheduler ni cooldown) | 3-4h |

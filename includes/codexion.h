@@ -16,7 +16,11 @@ int is_valid_scheduler(const char *str);
 int	parse_args(int argc, char **argv, size_t *values);
 /* time_utils.c */
 size_t	get_timestamp_ms(void);
+
 typedef struct s_simulation	t_simulation;
+
+/* logging.c */
+void    log_message(t_simulation *sim, int coder_id, char *message);
 
 typedef enum e_state
 {
