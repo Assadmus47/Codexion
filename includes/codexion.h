@@ -18,11 +18,15 @@ int	parse_args(int argc, char **argv, size_t *values);
 size_t	get_timestamp_ms(void);
 
 typedef struct s_simulation	t_simulation;
+typedef struct s_dongle	t_dongle;
 
 /* logging.c */
 void    log_message(t_simulation *sim, int coder_id, char *message);
 /* coder.c */
 void	*coder_routine(void *arg);
+/* dongle.c*/
+int		use_dongle(t_dongle *dongle, size_t cooldown);
+void	release_dongle(t_dongle *dongle);
 
 typedef enum e_state
 {
@@ -44,7 +48,6 @@ typedef	struct	s_dongle
 	pthread_mutex_t	mutex;
 }	t_dongle;
 
-
 typedef	struct	s_coder
 {
 	int			id;
@@ -56,7 +59,6 @@ typedef	struct	s_coder
 	t_simulation	*sim;
 	pthread_t		coder_thread;
 }	t_coder;
-
 
 typedef	struct	s_simulation
 {
