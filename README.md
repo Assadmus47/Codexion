@@ -9,8 +9,8 @@
 | **5**   |✅| Fonctions utilitaires de temps (timestamp ms, sleep précis) | 2h |
 | **6**   |✅| Système de log thread-safe (mutex sur l'output, format imposé) | 2-3h |
 | **7**   |✅| Création des threads coders + lifecycle basique (create/join, boucle vide) | 3h |
-| **8**   | | Mutex par dongle + acquisition/relâchement basique (sans scheduler ni cooldown) | 3-4h |
-| **9**   | | Cooldown des dongles (indisponibilité après relâchement) | 2-3h |
+| **8**   |✅| Mutex par dongle + acquisition/relâchement basique (sans scheduler ni cooldown) | 3-4h |
+| **9**   |✅| Cooldown des dongles (indisponibilité après relâchement) | 2-3h |
 | **10**  | | Priority queue/heap maison + scheduler FIFO | 3-4h |
 | **11**  | | Scheduler EDF (deadline = last_compile_start + time_to_burnout) + tie-breaker | 3-4h |
 | **12**  | | Intégration machine à états complète (compile → debug → refactor → repeat) | 3-4h |

@@ -19,7 +19,9 @@ size_t	get_timestamp_ms(void);
 
 typedef struct s_simulation	t_simulation;
 typedef struct s_dongle	t_dongle;
-
+typedef struct s_heap_node t_heap_node;
+typedef struct s_heap t_heap;
+typedef struct s_coder t_coder;
 /* logging.c */
 void    log_message(t_simulation *sim, int coder_id, char *message);
 /* coder.c */
@@ -27,6 +29,24 @@ void	*coder_routine(void *arg);
 /* dongle.c*/
 int		use_dongle(t_dongle *dongle, size_t cooldown);
 void	release_dongle(t_dongle *dongle);
+/* heap.c */
+int	heap_init(t_heap *heap, size_t capacity);
+void	heap_push(t_heap *heap, t_coder *coder, size_t priority);
+t_coder	*heap_pop(t_heap *heap);
+void	heap_destroy(t_heap *heap);
+
+typedef struct s_heap_node
+{
+	t_coder	*coder;
+	size_t	deadline;
+}	t_heap_node;
+
+typedef struct s_heap
+{
+	t_heap_node	*nodes;
+	size_t		size;
+	size_t		capacity;
+}	t_heap;
 
 typedef enum e_state
 {
