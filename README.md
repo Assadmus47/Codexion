@@ -23,7 +23,7 @@
 ## Notes
 - Théorie complète du sujet (analogie philosophes, cycle de vie coder, dongles, scheduler) déjà expliquée en conversation — à relire avant le Jour 4 (design des structs) au plus tard, parce que là ça devient nécessaire.
 - Deadlock comprehension check : à faire avant d'attaquer le Jour 8 (dongles).
-
+ffrf
 
 ## params
 Les 8 paramètres du programme
