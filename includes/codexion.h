@@ -34,6 +34,7 @@ int	heap_init(t_heap *heap, size_t capacity);
 void	heap_push(t_heap *heap, t_coder *coder, size_t priority);
 t_coder	*heap_pop(t_heap *heap);
 void	heap_destroy(t_heap *heap);
+size_t	get_priority(t_coder *coder);
 
 typedef struct s_heap_node
 {

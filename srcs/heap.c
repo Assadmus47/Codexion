@@ -50,9 +50,13 @@ t_coder	*heap_pop(t_heap *heap)
 		left = 2 * i + 1;
 		right = 2 * i + 2;
 		smallest = i;
-		if (left < heap->size && heap->nodes[left].deadline < heap->nodes[smallest].deadline)
+		if (left < heap->size && (heap->nodes[left].deadline < heap->nodes[smallest].deadline
+			|| (heap->nodes[left].deadline == heap->nodes[smallest].deadline
+			&& heap->nodes[left].coder->id < heap->nodes[smallest].coder->id)))
 			smallest = left;
-		if (right < heap->size && heap->nodes[right].deadline < heap->nodes[smallest].deadline)
+		if (right < heap->size && (heap->nodes[right].deadline < heap->nodes[smallest].deadline
+			|| (heap->nodes[right].deadline == heap->nodes[smallest].deadline
+			&& heap->nodes[right].coder->id < heap->nodes[smallest].coder->id)))
 			smallest = right;
 		if (smallest == i)
 			break ;
@@ -69,4 +73,11 @@ void	heap_destroy(t_heap *heap)
 	free(heap->nodes);
 	heap->size = 0;
 	heap->capacity = 0;
+}
+
+size_t	get_priority(t_coder *coder)
+{
+	if (coder->sim->scheduler == FIFO)
+		return (get_timestamp_ms());
+	return (coder->last_compile_start + coder->sim->time_to_burnout);
 }
