@@ -6,7 +6,8 @@ CFLAGS = -Wall -Wextra -Werror -pthread
 SRCS_DIR = srcs
 INCS_DIR = includes
 
-SRCS = $(SRCS_DIR)/main.c $(SRCS_DIR)/parsing.c $(SRCS_DIR)/parsing_utils.c $(SRCS_DIR)/utils.c $(SRCS_DIR)/time_utils.c $(SRCS_DIR)/logging.c $(SRCS_DIR)/coder.c $(SRCS_DIR)/dongle.c
+SRCS = $(SRCS_DIR)/main.c $(SRCS_DIR)/parsing.c $(SRCS_DIR)/parsing_utils.c $(SRCS_DIR)/utils.c $(SRCS_DIR)/time_utils.c $(SRCS_DIR)/logging.c $(SRCS_DIR)/coder.c $(SRCS_DIR)/dongle.c $(SRCS_DIR)/heap.c
+
 
 
 OBJS = $(SRCS:.c=.o)
