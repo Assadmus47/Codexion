@@ -7,7 +7,7 @@
 # include <string.h>
 # include <stdint.h>
 # include <pthread.h>
-#include <unistd.h>
+# include <unistd.h>
 
 /* parsing_utils.c */
 int	is_valid_number(const char *str);
@@ -27,6 +27,7 @@ typedef struct s_coder t_coder;
 void    log_message(t_simulation *sim, int coder_id, char *message);
 /* coder.c */
 void	*coder_routine(void *arg);
+void	*monitor_routine(void *arg);
 /* dongle.c*/
 int		use_dongle(t_dongle *dongle, size_t cooldown);
 void	release_dongle(t_dongle *dongle);
@@ -85,6 +86,7 @@ typedef	struct	s_coder
 	t_dongle	*right_dongle;
 	t_simulation	*sim;
 	pthread_t		coder_thread;
+	pthread_mutex_t	compile_mutex;
 }	t_coder;
 
 typedef	struct	s_simulation
