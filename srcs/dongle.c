@@ -35,7 +35,7 @@ void	release_dongles(t_coder *coder)
 	release_dongle(coder->right_dongle);
 }
 
-void	acquire_dongles(t_coder *coder)
+int	acquire_dongles(t_coder *coder)
 {
 	t_dongle	*first;
 	t_dongle	*second;
@@ -51,9 +51,21 @@ void	acquire_dongles(t_coder *coder)
 		second = coder->left_dongle;
 	}
 	while (!use_dongle(first, coder->sim->dongle_cooldown))
+	{
+		if (get_simulation_flag(coder))
+			return (0);
 		usleep_ms(1);
+	}
 	log_message(coder->sim, coder->id, "has taken a dongle");
 	while (!use_dongle(second, coder->sim->dongle_cooldown))
+	{
+		if (get_simulation_flag(coder))
+		{
+			release_dongle(first);
+			return (0);
+		}
 		usleep_ms(1);
+	}
 	log_message(coder->sim, coder->id, "has taken a dongle");
+	return (1);
 }

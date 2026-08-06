@@ -1,6 +1,6 @@
 #include "codexion.h"
 
-static int get_simulation_flag(t_coder *coder)
+int get_simulation_flag(t_coder *coder)
 {
 	int stop;
 
@@ -19,7 +19,8 @@ void	*coder_routine(void *arg)
 	stop = get_simulation_flag(coder);
 	while (stop == 0)
 	{
-		acquire_dongles(coder);
+		if (!acquire_dongles(coder))
+			break ;
 		coder->coder_status = COMPILING;
 		log_message(coder->sim, coder->id, "is compiling");
 		pthread_mutex_lock(&coder->compile_mutex);
@@ -51,12 +52,14 @@ void	*monitor_routine(void *arg)
 	size_t			i;
 	size_t			elapsed;
 	int				stop;
+	int				all_done;
 
 	sim = (t_simulation *)arg;
 	stop = 0;
 	while (!stop)
 	{
 		i = 0;
+		all_done = 1;
 		while (i < sim->number_of_coders)
 		{
 			pthread_mutex_lock(&sim->coders[i].compile_mutex);
@@ -70,7 +73,16 @@ void	*monitor_routine(void *arg)
 				pthread_mutex_unlock(&sim->flag_mutex);
 				return (NULL);
 			}
+			if (sim->coders[i].nb_compiles < sim->number_of_compiles_required)
+				all_done = 0;
 			i++;
+		}
+		if (all_done)
+		{
+			pthread_mutex_lock(&sim->flag_mutex);
+			sim->flag = 1;
+			pthread_mutex_unlock(&sim->flag_mutex);
+			return (NULL);
 		}
 		pthread_mutex_lock(&sim->flag_mutex);
 		stop = sim->flag;

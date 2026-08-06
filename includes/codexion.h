@@ -28,10 +28,11 @@ void    log_message(t_simulation *sim, int coder_id, char *message);
 /* coder.c */
 void	*coder_routine(void *arg);
 void	*monitor_routine(void *arg);
+int 	get_simulation_flag(t_coder *coder);
 /* dongle.c*/
 int		use_dongle(t_dongle *dongle, size_t cooldown);
 void	release_dongle(t_dongle *dongle);
-void	acquire_dongles(t_coder *coder);
+int		acquire_dongles(t_coder *coder);
 void	release_dongles(t_coder *coder);
 /* heap.c */
 int	heap_init(t_heap *heap, size_t capacity);
