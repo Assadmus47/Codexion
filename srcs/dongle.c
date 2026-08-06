@@ -28,3 +28,32 @@ void	release_dongle(t_dongle *dongle)
 	dongle->timestamp = get_timestamp_ms();
 	pthread_mutex_unlock(&dongle->mutex);
 }
+
+void	release_dongles(t_coder *coder)
+{
+	release_dongle(coder->left_dongle);
+	release_dongle(coder->right_dongle);
+}
+
+void	acquire_dongles(t_coder *coder)
+{
+	t_dongle	*first;
+	t_dongle	*second;
+
+	if (coder->left_dongle->id < coder->right_dongle->id)
+	{
+		first = coder->left_dongle;
+		second = coder->right_dongle;
+	}
+	else
+	{
+		first = coder->right_dongle;
+		second = coder->left_dongle;
+	}
+	while (!use_dongle(first, coder->sim->dongle_cooldown))
+		usleep_ms(1);
+	log_message(coder->sim, coder->id, "has taken a dongle");
+	while (!use_dongle(second, coder->sim->dongle_cooldown))
+		usleep_ms(1);
+	log_message(coder->sim, coder->id, "has taken a dongle");
+}

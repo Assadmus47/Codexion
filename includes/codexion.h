@@ -7,6 +7,7 @@
 # include <string.h>
 # include <stdint.h>
 # include <pthread.h>
+#include <unistd.h>
 
 /* parsing_utils.c */
 int	is_valid_number(const char *str);
@@ -29,12 +30,16 @@ void	*coder_routine(void *arg);
 /* dongle.c*/
 int		use_dongle(t_dongle *dongle, size_t cooldown);
 void	release_dongle(t_dongle *dongle);
+void	acquire_dongles(t_coder *coder);
+void	release_dongles(t_coder *coder);
 /* heap.c */
 int	heap_init(t_heap *heap, size_t capacity);
 void	heap_push(t_heap *heap, t_coder *coder, size_t priority);
 t_coder	*heap_pop(t_heap *heap);
 void	heap_destroy(t_heap *heap);
 size_t	get_priority(t_coder *coder);
+/* time_utils.c */
+void	usleep_ms(size_t ms);
 
 typedef struct s_heap_node
 {
@@ -64,6 +69,7 @@ typedef enum e_scheduler
 
 typedef	struct	s_dongle
 {
+	int				id;
 	int				is_taken;
 	size_t			timestamp;
 	pthread_mutex_t	mutex;
