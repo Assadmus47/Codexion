@@ -36,6 +36,9 @@ static int	init_arrays(t_simulation *sim)
 		sim->dongles[i].is_taken = 0;
 		sim->dongles[i].timestamp = 0;
 		pthread_mutex_init(&sim->dongles[i].mutex, NULL);
+		if (!heap_init(&sim->dongles[i].waiting_heap, sim->number_of_coders))
+			return (0);
+		pthread_cond_init(&sim->dongles[i].cond, NULL);
 		i++;
 	}
 	i = 0;
@@ -65,6 +68,8 @@ static void	cleanup(t_simulation *sim)
 	while (i < sim->number_of_coders)
 	{
 		pthread_mutex_destroy(&sim->dongles[i].mutex);
+		heap_destroy(&sim->dongles[i].waiting_heap);
+		pthread_cond_destroy(&sim->dongles[i].cond);
 		pthread_mutex_destroy(&sim->coders[i].compile_mutex);
 		i++;
 	}

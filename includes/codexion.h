@@ -8,6 +8,7 @@
 # include <stdint.h>
 # include <pthread.h>
 # include <unistd.h>
+# include <time.h>
 
 /* parsing_utils.c */
 int	is_valid_number(const char *str);
@@ -17,6 +18,7 @@ int is_valid_scheduler(const char *str);
 int	parse_args(int argc, char **argv, size_t *values);
 /* time_utils.c */
 size_t	get_timestamp_ms(void);
+struct timespec	get_future_timespec(size_t ms);
 
 typedef struct s_simulation	t_simulation;
 typedef struct s_dongle	t_dongle;
@@ -42,6 +44,8 @@ void	heap_destroy(t_heap *heap);
 size_t	get_priority(t_coder *coder);
 /* time_utils.c */
 void	usleep_ms(size_t ms);
+/* dongle_wait.c*/
+int	acquire_one_dongle(t_coder *coder, t_dongle *dongle);
 
 typedef struct s_heap_node
 {
@@ -75,6 +79,8 @@ typedef	struct	s_dongle
 	int				is_taken;
 	size_t			timestamp;
 	pthread_mutex_t	mutex;
+	t_heap			waiting_heap;
+	pthread_cond_t	cond;
 }	t_dongle;
 
 typedef	struct	s_coder

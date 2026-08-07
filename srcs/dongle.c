@@ -26,6 +26,7 @@ void	release_dongle(t_dongle *dongle)
 	pthread_mutex_lock(&dongle->mutex);
 	dongle->is_taken = 0;
 	dongle->timestamp = get_timestamp_ms();
+	pthread_cond_broadcast(&dongle->cond);
 	pthread_mutex_unlock(&dongle->mutex);
 }
 
@@ -50,22 +51,15 @@ int	acquire_dongles(t_coder *coder)
 		first = coder->right_dongle;
 		second = coder->left_dongle;
 	}
-	while (!use_dongle(first, coder->sim->dongle_cooldown))
-	{
-		if (get_simulation_flag(coder))
-			return (0);
-		usleep_ms(1);
-	}
+	if (!acquire_one_dongle(coder, first))
+		return (0);
 	log_message(coder->sim, coder->id, "has taken a dongle");
-	while (!use_dongle(second, coder->sim->dongle_cooldown))
+	if (!acquire_one_dongle(coder, second))
 	{
-		if (get_simulation_flag(coder))
-		{
-			release_dongle(first);
-			return (0);
-		}
-		usleep_ms(1);
+		release_dongle(first);
+		return (0);
 	}
 	log_message(coder->sim, coder->id, "has taken a dongle");
 	return (1);
 }
+
