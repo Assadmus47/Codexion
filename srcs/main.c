@@ -6,13 +6,40 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/09 04:56:32 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/08/09 04:56:33 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/08/10 05:58:18 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "codexion.h"
 
-static int	init_simulation(t_simulation *sim, size_t *values, char *scheduler_str)
+void	cleanup(t_simulation *sim, size_t dongles_done, size_t coders_done)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < dongles_done)
+	{
+		pthread_mutex_destroy(&sim->dongles[i].mutex);
+		heap_destroy(&sim->dongles[i].waiting_heap);
+		pthread_cond_destroy(&sim->dongles[i].cond);
+		i++;
+	}
+	i = 0;
+	while (i < coders_done)
+	{
+		pthread_mutex_destroy(&sim->coders[i].compile_mutex);
+		i++;
+	}
+	if (sim->dongles)
+		free(sim->dongles);
+	if (sim->coders)
+		free(sim->coders);
+	pthread_mutex_destroy(&sim->log_mutex);
+	pthread_mutex_destroy(&sim->flag_mutex);
+}
+
+static int	init_simulation(t_simulation *sim, size_t *values,
+		char *scheduler_str)
 {
 	sim->number_of_coders = values[0];
 	sim->time_to_burnout = values[1];
@@ -29,66 +56,25 @@ static int	init_simulation(t_simulation *sim, size_t *values, char *scheduler_st
 	if (pthread_mutex_init(&sim->log_mutex, NULL) != 0)
 		return (0);
 	if (pthread_mutex_init(&sim->flag_mutex, NULL) != 0)
+	{
+		pthread_mutex_destroy(&sim->log_mutex);
 		return (0);
+	}
+	return (1);
 	return (1);
 }
 
 static int	init_arrays(t_simulation *sim)
 {
-	size_t	i;
-
 	sim->dongles = malloc(sizeof(t_dongle) * sim->number_of_coders);
 	sim->coders = malloc(sizeof(t_coder) * sim->number_of_coders);
 	if (!sim->dongles || !sim->coders)
 		return (0);
-	i = 0;
-	while (i < sim->number_of_coders)
-	{
-		sim->dongles[i].id = (int)i;
-		sim->dongles[i].is_taken = 0;
-		sim->dongles[i].timestamp = 0;
-		pthread_mutex_init(&sim->dongles[i].mutex, NULL);
-		if (!heap_init(&sim->dongles[i].waiting_heap, sim->number_of_coders))
-			return (0);
-		pthread_cond_init(&sim->dongles[i].cond, NULL);
-		i++;
-	}
-	i = 0;
-	while (i < sim->number_of_coders)
-	{
-		sim->coders[i].id = (int)i + 1;
-		sim->coders[i].sim = sim;
-		sim->coders[i].nb_compiles = 0;
-		sim->coders[i].coder_status = REFACTORING;
-		sim->coders[i].left_dongle = &sim->dongles[i];
-		if (sim->number_of_coders == 1)
-			sim->coders[i].right_dongle = &sim->dongles[i];
-		else
-			sim->coders[i].right_dongle = &sim->dongles[(i + 1) % sim->number_of_coders];
-		pthread_mutex_init(&sim->coders[i].compile_mutex, NULL);
-		sim->coders[i].last_compile_start = get_timestamp_ms();
-		i++;
-	}
+	if (!init_all_dongles(sim))
+		return (0);
+	if (!init_all_coders(sim))
+		return (0);
 	return (1);
-}
-
-static void	cleanup(t_simulation *sim)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < sim->number_of_coders)
-	{
-		pthread_mutex_destroy(&sim->dongles[i].mutex);
-		heap_destroy(&sim->dongles[i].waiting_heap);
-		pthread_cond_destroy(&sim->dongles[i].cond);
-		pthread_mutex_destroy(&sim->coders[i].compile_mutex);
-		i++;
-	}
-	free(sim->dongles);
-	free(sim->coders);
-	pthread_mutex_destroy(&sim->log_mutex);
-	pthread_mutex_destroy(&sim->flag_mutex);
 }
 
 int	main(int argc, char **argv)
@@ -97,7 +83,7 @@ int	main(int argc, char **argv)
 	t_simulation	sim;
 	pthread_t		*threads;
 	pthread_t		monitor_thread;
-	size_t			i;
+	size_t			counter[3];
 
 	if (!parse_args(argc, argv, values))
 		return (1);
@@ -107,22 +93,34 @@ int	main(int argc, char **argv)
 		return (1);
 	threads = malloc(sizeof(pthread_t) * sim.number_of_coders);
 	if (!threads)
+	{
+		cleanup(&sim, sim.number_of_coders, sim.number_of_coders);
 		return (1);
-	i = 0;
-	while (i < sim.number_of_coders)
-	{
-		pthread_create(&threads[i], NULL, coder_routine, &sim.coders[i]);
-		i++;
 	}
-	pthread_create(&monitor_thread, NULL, monitor_routine, &sim);
-	i = 0;
-	while (i < sim.number_of_coders)
+	counter[0] = 0;
+	while (counter[0] < sim.number_of_coders)
 	{
-		pthread_join(threads[i], NULL);
-		i++;
+		if (pthread_create(&threads[counter[0]], NULL, coder_routine,
+				&sim.coders[counter[0]]) != 0)
+			break ;
+		counter[0]++;
 	}
-	pthread_join(monitor_thread, NULL);
+	counter[1] = counter[0];
+	counter[2] = 0;
+	if (counter[1] == sim.number_of_coders)
+	{
+		if (pthread_create(&monitor_thread, NULL, monitor_routine, &sim) == 0)
+			counter[2] = 1;
+	}
+	counter[0] = 0;
+	while (counter[0] < counter[1])
+	{
+		pthread_join(threads[counter[0]], NULL);
+		counter[0]++;
+	}
+	if (counter[2])
+		pthread_join(monitor_thread, NULL);
 	free(threads);
-	cleanup(&sim);
+	cleanup(&sim, sim.number_of_coders, sim.number_of_coders);
 	return (0);
 }
