@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/09 04:56:32 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/08/10 05:58:18 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/08/10 06:08:09 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,13 +77,33 @@ static int	init_arrays(t_simulation *sim)
 	return (1);
 }
 
+static void	run_simulation(t_simulation *sim)
+{
+	pthread_t	*threads;
+	pthread_t	monitor_thread;
+	size_t		info[2];
+
+	threads = malloc(sizeof(pthread_t) * sim->number_of_coders);
+	if (!threads)
+	{
+		cleanup(sim, sim->number_of_coders, sim->number_of_coders);
+		return ;
+	}
+	info[0] = create_coders(sim, threads);
+	info[1] = 0;
+	monitor_thread = 0;
+	if (info[0] == sim->number_of_coders)
+		if (pthread_create(&monitor_thread, NULL, monitor_routine, sim) == 0)
+			info[1] = 1;
+	join_all(threads, info, monitor_thread);
+	free(threads);
+	cleanup(sim, sim->number_of_coders, sim->number_of_coders);
+}
+
 int	main(int argc, char **argv)
 {
 	size_t			values[7];
 	t_simulation	sim;
-	pthread_t		*threads;
-	pthread_t		monitor_thread;
-	size_t			counter[3];
 
 	if (!parse_args(argc, argv, values))
 		return (1);
@@ -91,36 +111,6 @@ int	main(int argc, char **argv)
 		return (1);
 	if (!init_arrays(&sim))
 		return (1);
-	threads = malloc(sizeof(pthread_t) * sim.number_of_coders);
-	if (!threads)
-	{
-		cleanup(&sim, sim.number_of_coders, sim.number_of_coders);
-		return (1);
-	}
-	counter[0] = 0;
-	while (counter[0] < sim.number_of_coders)
-	{
-		if (pthread_create(&threads[counter[0]], NULL, coder_routine,
-				&sim.coders[counter[0]]) != 0)
-			break ;
-		counter[0]++;
-	}
-	counter[1] = counter[0];
-	counter[2] = 0;
-	if (counter[1] == sim.number_of_coders)
-	{
-		if (pthread_create(&monitor_thread, NULL, monitor_routine, &sim) == 0)
-			counter[2] = 1;
-	}
-	counter[0] = 0;
-	while (counter[0] < counter[1])
-	{
-		pthread_join(threads[counter[0]], NULL);
-		counter[0]++;
-	}
-	if (counter[2])
-		pthread_join(monitor_thread, NULL);
-	free(threads);
-	cleanup(&sim, sim.number_of_coders, sim.number_of_coders);
+	run_simulation(&sim);
 	return (0);
 }

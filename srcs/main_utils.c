@@ -59,3 +59,32 @@ int	init_all_coders(t_simulation *sim)
 	}
 	return (1);
 }
+
+size_t	create_coders(t_simulation *sim, pthread_t *threads)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < sim->number_of_coders)
+	{
+		if (pthread_create(&threads[i], NULL, coder_routine,
+				&sim->coders[i]) != 0)
+			break ;
+		i++;
+	}
+	return (i);
+}
+
+void	join_all(pthread_t *threads, size_t info[2], pthread_t monitor)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < info[0])
+	{
+		pthread_join(threads[i], NULL);
+		i++;
+	}
+	if (info[1])
+		pthread_join(monitor, NULL);
+}

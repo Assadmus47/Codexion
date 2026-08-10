@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/09 04:55:58 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/08/10 05:56:47 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/08/10 06:03:08 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,8 @@ int				acquire_one_dongle(t_coder *coder, t_dongle *dongle);
 int				init_all_coders(t_simulation *sim);
 int				init_all_dongles(t_simulation *sim);
 void			cleanup(t_simulation *sim, size_t dongles_done, size_t coders_done);
-
+size_t			create_coders(t_simulation *sim, pthread_t *threads);
+void			join_all(pthread_t *threads, size_t info[2], pthread_t monitor);
 
 typedef struct s_heap_node
 {
