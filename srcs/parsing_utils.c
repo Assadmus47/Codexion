@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/09 04:56:35 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/08/09 04:56:36 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/08/10 06:29:33 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ int	is_valid_number(const char *str)
 	int	i;
 
 	i = 0;
-    if (str[0] == '\0')
-        return 0;
+	if (str[0] == '\0')
+		return 0;
 
 	while (str[i])
 	{
-        if (!is_digit(str[i]))
-            return 0;
-        i++;
+		if (!is_digit(str[i]))
+			return 0;
+		i++;
 	}
 	return (1);
 }
