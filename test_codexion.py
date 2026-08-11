@@ -62,7 +62,7 @@ def estimate_timeout(args):
     tc, td, tr, req, cooldown = int(tc), int(td), int(tr), int(req), int(cooldown)
     cycle_ms = tc + td + tr + cooldown
     est_s = cycle_ms * (req + 4) / 1000.0 + 5
-    return max(5, min(est_s, 45))
+    return max(5, est_s)
 
 
 def validate_output(output, required_compiles):

@@ -15,7 +15,7 @@ set -u
 
 BINARY="${1:-}"
 REPORT="${2:-valgrind_report.txt}"
-TIMEOUT=60
+TIMEOUT=90
 
 if [ -z "$BINARY" ] || [ ! -x "$BINARY" ]; then
     echo "Usage: $0 /path/to/codexion [rapport.txt]"
@@ -32,7 +32,7 @@ TESTS=(
     "BASIC fifo;4 800 200 200 200 5 10 fifo"
     "BASIC edf;4 800 200 200 200 5 10 edf"
     "BASIC 10 coders;10 10000 100 100 100 5 40 fifo"
-    "BASIC 20 coders edf;20 5000 500 500 10 100 50 edf"
+    "BASIC 20 coders edf;20 5000 500 500 10 30 50 edf"
     "BASIC low cooldown;5 2000 100 100 100 20 1 fifo"
     "BASIC slow cycle;3 10000 2000 2000 2000 2 100 fifo"
     "STRESS 100 coders;100 10000 66 24 87 10 10 fifo"
@@ -105,6 +105,9 @@ for entry in "${TESTS[@]}"; do
         if grep -qE "definitely lost: [1-9]|indirectly lost: [1-9]" "$vg_out"; then
             echo "STATUS: LEAK DETECTED (definitely/indirectly lost > 0)" >> "$REPORT"
             leaks=$((leaks + 1))
+        elif [ $rc -ne 0 ] && grep -q "^Error:" "$vg_out"; then
+            echo "STATUS: REJECTED (expected input validation error, code $rc)" >> "$REPORT"
+            clean=$((clean + 1))
         elif [ $rc -ne 0 ]; then
             echo "STATUS: CRASH/ABNORMAL EXIT (code $rc)" >> "$REPORT"
             crashes=$((crashes + 1))

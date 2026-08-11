@@ -1,0 +1,456 @@
+Codexion - rapport valgrind (memcheck)
+Binaire  : ./codexion
+Date     : Tue Aug 11 12:00:14 AM CEST 2026
+========================================================
+
+--------------------------------------------------------------
+TEST: BASIC fifo
+CMD : ./codexion 4 800 200 200 200 5 10 fifo
+--------------------------------------------------------------
+STATUS: CLEAN
+
+==186707== Memcheck, a memory error detector
+==186707== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==186707== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==186707== Command: ./codexion 4 800 200 200 200 5 10 fifo
+==186707== 
+==186707== 
+==186707== HEAP SUMMARY:
+==186707==     in use at exit: 0 bytes in 0 blocks
+==186707==   total heap usage: 13 allocs, 13 frees, 6,640 bytes allocated
+==186707== 
+==186707== All heap blocks were freed -- no leaks are possible
+==186707== 
+==186707== For lists of detected and suppressed errors, rerun with: -s
+==186707== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+--------------------------------------------------------------
+TEST: BASIC edf
+CMD : ./codexion 4 800 200 200 200 5 10 edf
+--------------------------------------------------------------
+STATUS: CLEAN
+
+==186767== Memcheck, a memory error detector
+==186767== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==186767== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==186767== Command: ./codexion 4 800 200 200 200 5 10 edf
+==186767== 
+==186767== 
+==186767== HEAP SUMMARY:
+==186767==     in use at exit: 0 bytes in 0 blocks
+==186767==   total heap usage: 13 allocs, 13 frees, 6,640 bytes allocated
+==186767== 
+==186767== All heap blocks were freed -- no leaks are possible
+==186767== 
+==186767== For lists of detected and suppressed errors, rerun with: -s
+==186767== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+--------------------------------------------------------------
+TEST: BASIC 10 coders
+CMD : ./codexion 10 10000 100 100 100 5 40 fifo
+--------------------------------------------------------------
+STATUS: CLEAN
+
+==186932== Memcheck, a memory error detector
+==186932== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==186932== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==186932== Command: ./codexion 10 10000 100 100 100 5 40 fifo
+==186932== 
+==186932== 
+==186932== HEAP SUMMARY:
+==186932==     in use at exit: 0 bytes in 0 blocks
+==186932==   total heap usage: 25 allocs, 25 frees, 11,008 bytes allocated
+==186932== 
+==186932== All heap blocks were freed -- no leaks are possible
+==186932== 
+==186932== For lists of detected and suppressed errors, rerun with: -s
+==186932== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+--------------------------------------------------------------
+TEST: BASIC 20 coders edf
+CMD : ./codexion 20 5000 500 500 10 30 50 edf
+--------------------------------------------------------------
+STATUS: CLEAN
+
+==186977== Memcheck, a memory error detector
+==186977== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==186977== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==186977== Command: ./codexion 20 5000 500 500 10 30 50 edf
+==186977== 
+==186977== 
+==186977== HEAP SUMMARY:
+==186977==     in use at exit: 0 bytes in 0 blocks
+==186977==   total heap usage: 45 allocs, 45 frees, 20,848 bytes allocated
+==186977== 
+==186977== All heap blocks were freed -- no leaks are possible
+==186977== 
+==186977== For lists of detected and suppressed errors, rerun with: -s
+==186977== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+--------------------------------------------------------------
+TEST: BASIC low cooldown
+CMD : ./codexion 5 2000 100 100 100 20 1 fifo
+--------------------------------------------------------------
+STATUS: CLEAN
+
+==187283== Memcheck, a memory error detector
+==187283== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==187283== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==187283== Command: ./codexion 5 2000 100 100 100 20 1 fifo
+==187283== 
+==187283== 
+==187283== HEAP SUMMARY:
+==187283==     in use at exit: 0 bytes in 0 blocks
+==187283==   total heap usage: 15 allocs, 15 frees, 7,288 bytes allocated
+==187283== 
+==187283== All heap blocks were freed -- no leaks are possible
+==187283== 
+==187283== For lists of detected and suppressed errors, rerun with: -s
+==187283== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+--------------------------------------------------------------
+TEST: BASIC slow cycle
+CMD : ./codexion 3 10000 2000 2000 2000 2 100 fifo
+--------------------------------------------------------------
+STATUS: CLEAN
+
+==187353== Memcheck, a memory error detector
+==187353== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==187353== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==187353== Command: ./codexion 3 10000 2000 2000 2000 2 100 fifo
+==187353== 
+==187353== 
+==187353== HEAP SUMMARY:
+==187353==     in use at exit: 0 bytes in 0 blocks
+==187353==   total heap usage: 11 allocs, 11 frees, 6,024 bytes allocated
+==187353== 
+==187353== All heap blocks were freed -- no leaks are possible
+==187353== 
+==187353== For lists of detected and suppressed errors, rerun with: -s
+==187353== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+--------------------------------------------------------------
+TEST: STRESS 100 coders
+CMD : ./codexion 100 10000 66 24 87 10 10 fifo
+--------------------------------------------------------------
+STATUS: CLEAN
+
+==187477== Memcheck, a memory error detector
+==187477== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==187477== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==187477== Command: ./codexion 100 10000 66 24 87 10 10 fifo
+==187477== 
+==187477== 
+==187477== HEAP SUMMARY:
+==187477==     in use at exit: 0 bytes in 0 blocks
+==187477==   total heap usage: 205 allocs, 205 frees, 214,768 bytes allocated
+==187477== 
+==187477== All heap blocks were freed -- no leaks are possible
+==187477== 
+==187477== For lists of detected and suppressed errors, rerun with: -s
+==187477== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+--------------------------------------------------------------
+TEST: MID pass edf
+CMD : ./codexion 4 557 128 222 115 10 150 edf
+--------------------------------------------------------------
+STATUS: CLEAN
+
+==187648== Memcheck, a memory error detector
+==187648== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==187648== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==187648== Command: ./codexion 4 557 128 222 115 10 150 edf
+==187648== 
+==187648== 
+==187648== HEAP SUMMARY:
+==187648==     in use at exit: 0 bytes in 0 blocks
+==187648==   total heap usage: 13 allocs, 13 frees, 6,640 bytes allocated
+==187648== 
+==187648== All heap blocks were freed -- no leaks are possible
+==187648== 
+==187648== For lists of detected and suppressed errors, rerun with: -s
+==187648== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+--------------------------------------------------------------
+TEST: MID pass edf 2
+CMD : ./codexion 4 1000 300 100 100 2 199 edf
+--------------------------------------------------------------
+STATUS: CLEAN
+
+==187661== Memcheck, a memory error detector
+==187661== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==187661== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==187661== Command: ./codexion 4 1000 300 100 100 2 199 edf
+==187661== 
+==187661== 
+==187661== HEAP SUMMARY:
+==187661==     in use at exit: 0 bytes in 0 blocks
+==187661==   total heap usage: 13 allocs, 13 frees, 6,640 bytes allocated
+==187661== 
+==187661== All heap blocks were freed -- no leaks are possible
+==187661== 
+==187661== For lists of detected and suppressed errors, rerun with: -s
+==187661== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+--------------------------------------------------------------
+TEST: MID pass edf 3
+CMD : ./codexion 4 1000 100 300 200 2 399 edf
+--------------------------------------------------------------
+STATUS: CLEAN
+
+==187688== Memcheck, a memory error detector
+==187688== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==187688== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==187688== Command: ./codexion 4 1000 100 300 200 2 399 edf
+==187688== 
+==187688== 
+==187688== HEAP SUMMARY:
+==187688==     in use at exit: 0 bytes in 0 blocks
+==187688==   total heap usage: 13 allocs, 13 frees, 6,640 bytes allocated
+==187688== 
+==187688== All heap blocks were freed -- no leaks are possible
+==187688== 
+==187688== For lists of detected and suppressed errors, rerun with: -s
+==187688== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+--------------------------------------------------------------
+TEST: HARD burnout 25pct
+CMD : ./codexion 4 1000 100 300 200 2 400 edf
+--------------------------------------------------------------
+STATUS: CLEAN
+
+==187728== Memcheck, a memory error detector
+==187728== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==187728== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==187728== Command: ./codexion 4 1000 100 300 200 2 400 edf
+==187728== 
+==187728== 
+==187728== HEAP SUMMARY:
+==187728==     in use at exit: 0 bytes in 0 blocks
+==187728==   total heap usage: 13 allocs, 13 frees, 6,640 bytes allocated
+==187728== 
+==187728== All heap blocks were freed -- no leaks are possible
+==187728== 
+==187728== For lists of detected and suppressed errors, rerun with: -s
+==187728== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+--------------------------------------------------------------
+TEST: HARD burnout 35pct
+CMD : ./codexion 4 1000 300 100 100 2 200 edf
+--------------------------------------------------------------
+STATUS: CLEAN
+
+==187739== Memcheck, a memory error detector
+==187739== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==187739== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==187739== Command: ./codexion 4 1000 300 100 100 2 200 edf
+==187739== 
+==187739== 
+==187739== HEAP SUMMARY:
+==187739==     in use at exit: 0 bytes in 0 blocks
+==187739==   total heap usage: 13 allocs, 13 frees, 6,640 bytes allocated
+==187739== 
+==187739== All heap blocks were freed -- no leaks are possible
+==187739== 
+==187739== For lists of detected and suppressed errors, rerun with: -s
+==187739== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+--------------------------------------------------------------
+TEST: HARD burnout 16pct
+CMD : ./codexion 4 400 100 189 110 4 95 fifo
+--------------------------------------------------------------
+STATUS: CLEAN
+
+==187761== Memcheck, a memory error detector
+==187761== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==187761== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==187761== Command: ./codexion 4 400 100 189 110 4 95 fifo
+==187761== 
+==187761== 
+==187761== HEAP SUMMARY:
+==187761==     in use at exit: 0 bytes in 0 blocks
+==187761==   total heap usage: 13 allocs, 13 frees, 6,640 bytes allocated
+==187761== 
+==187761== All heap blocks were freed -- no leaks are possible
+==187761== 
+==187761== For lists of detected and suppressed errors, rerun with: -s
+==187761== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+--------------------------------------------------------------
+TEST: EDGE single coder
+CMD : ./codexion 1 1000 200 200 200 5 50 fifo
+--------------------------------------------------------------
+STATUS: CLEAN
+
+==187788== Memcheck, a memory error detector
+==187788== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==187788== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==187788== Command: ./codexion 1 1000 200 200 200 5 50 fifo
+==187788== 
+==187788== 
+==187788== HEAP SUMMARY:
+==187788==     in use at exit: 0 bytes in 0 blocks
+==187788==   total heap usage: 7 allocs, 7 frees, 4,888 bytes allocated
+==187788== 
+==187788== All heap blocks were freed -- no leaks are possible
+==187788== 
+==187788== For lists of detected and suppressed errors, rerun with: -s
+==187788== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+--------------------------------------------------------------
+TEST: EDGE two coders
+CMD : ./codexion 3 1000 600 10 10 5 100 fifo
+--------------------------------------------------------------
+STATUS: CLEAN
+
+==187797== Memcheck, a memory error detector
+==187797== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==187797== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==187797== Command: ./codexion 3 1000 600 10 10 5 100 fifo
+==187797== 
+==187797== 
+==187797== HEAP SUMMARY:
+==187797==     in use at exit: 0 bytes in 0 blocks
+==187797==   total heap usage: 11 allocs, 11 frees, 6,024 bytes allocated
+==187797== 
+==187797== All heap blocks were freed -- no leaks are possible
+==187797== 
+==187797== For lists of detected and suppressed errors, rerun with: -s
+==187797== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+--------------------------------------------------------------
+TEST: EDGE zero compiles required
+CMD : ./codexion 5 1000 200 200 200 0 10 fifo
+--------------------------------------------------------------
+STATUS: REJECTED (expected input validation error, code 1)
+
+==187819== Memcheck, a memory error detector
+==187819== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==187819== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==187819== Command: ./codexion 5 1000 200 200 200 0 10 fifo
+==187819== 
+Error: coders, burnout time and required compiles must be > 0
+==187819== 
+==187819== HEAP SUMMARY:
+==187819==     in use at exit: 0 bytes in 0 blocks
+==187819==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==187819== 
+==187819== All heap blocks were freed -- no leaks are possible
+==187819== 
+==187819== For lists of detected and suppressed errors, rerun with: -s
+==187819== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+--------------------------------------------------------------
+TEST: EDGE burnout time = 1ms
+CMD : ./codexion 2 1 200 200 200 5 10 fifo
+--------------------------------------------------------------
+STATUS: CLEAN
+
+==187826== Memcheck, a memory error detector
+==187826== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==187826== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==187826== Command: ./codexion 2 1 200 200 200 5 10 fifo
+==187826== 
+==187826== 
+==187826== HEAP SUMMARY:
+==187826==     in use at exit: 0 bytes in 0 blocks
+==187826==   total heap usage: 9 allocs, 9 frees, 5,440 bytes allocated
+==187826== 
+==187826== All heap blocks were freed -- no leaks are possible
+==187826== 
+==187826== For lists of detected and suppressed errors, rerun with: -s
+==187826== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+--------------------------------------------------------------
+TEST: EDGE huge cooldown
+CMD : ./codexion 2 1000 100 100 100 5 2000 fifo
+--------------------------------------------------------------
+STATUS: CLEAN
+
+==187845== Memcheck, a memory error detector
+==187845== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==187845== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==187845== Command: ./codexion 2 1000 100 100 100 5 2000 fifo
+==187845== 
+==187845== 
+==187845== HEAP SUMMARY:
+==187845==     in use at exit: 0 bytes in 0 blocks
+==187845==   total heap usage: 9 allocs, 9 frees, 5,440 bytes allocated
+==187845== 
+==187845== All heap blocks were freed -- no leaks are possible
+==187845== 
+==187845== For lists of detected and suppressed errors, rerun with: -s
+==187845== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+--------------------------------------------------------------
+TEST: EDGE two coders minimal
+CMD : ./codexion 2 500 50 50 50 3 5 fifo
+--------------------------------------------------------------
+STATUS: CLEAN
+
+==187877== Memcheck, a memory error detector
+==187877== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==187877== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==187877== Command: ./codexion 2 500 50 50 50 3 5 fifo
+==187877== 
+==187877== 
+==187877== HEAP SUMMARY:
+==187877==     in use at exit: 0 bytes in 0 blocks
+==187877==   total heap usage: 9 allocs, 9 frees, 5,440 bytes allocated
+==187877== 
+==187877== All heap blocks were freed -- no leaks are possible
+==187877== 
+==187877== For lists of detected and suppressed errors, rerun with: -s
+==187877== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+--------------------------------------------------------------
+TEST: EDGE many coders zero compiles
+CMD : ./codexion 20 5000 100 100 100 0 10 edf
+--------------------------------------------------------------
+STATUS: REJECTED (expected input validation error, code 1)
+
+==187896== Memcheck, a memory error detector
+==187896== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==187896== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==187896== Command: ./codexion 20 5000 100 100 100 0 10 edf
+==187896== 
+Error: coders, burnout time and required compiles must be > 0
+==187896== 
+==187896== HEAP SUMMARY:
+==187896==     in use at exit: 0 bytes in 0 blocks
+==187896==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==187896== 
+==187896== All heap blocks were freed -- no leaks are possible
+==187896== 
+==187896== For lists of detected and suppressed errors, rerun with: -s
+==187896== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+--------------------------------------------------------------
+TEST: EDGE single coder edf
+CMD : ./codexion 1 2000 200 200 200 10 30 edf
+--------------------------------------------------------------
+STATUS: CLEAN
+
+==187903== Memcheck, a memory error detector
+==187903== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==187903== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==187903== Command: ./codexion 1 2000 200 200 200 10 30 edf
+==187903== 
+==187903== 
+==187903== HEAP SUMMARY:
+==187903==     in use at exit: 0 bytes in 0 blocks
+==187903==   total heap usage: 7 allocs, 7 frees, 4,888 bytes allocated
+==187903== 
+==187903== All heap blocks were freed -- no leaks are possible
+==187903== 
+==187903== For lists of detected and suppressed errors, rerun with: -s
+==187903== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+========================================================
+RESUME
+  Total tests : 21
+  CLEAN       : 21
+  LEAK/ERROR  : 0
+  TIMEOUT     : 0
+  CRASH       : 0
+========================================================

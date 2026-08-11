@@ -140,6 +140,15 @@ The simulation stops as soon as every coder has compiled at least
 - Binary heap / priority queue: standard array-based min-heap
   (parent at `(i-1)/2`, children at `2i+1` / `2i+2`)
 
+## Note valgrind/helgrind
+helgrind rapporte des avertissements "dubious: associated lock is not
+held" sur pthread_cond_timedwait dans wait_for_dongle. C'est un faux
+positif connu de helgrind avec les implémentations glibc >= 2.34
+(pthread_cond basé sur futex en interne). Vérifié manuellement :
+dongle->mutex est bien tenu à chaque lock/broadcast/timedwait sur
+dongle->cond. Aucune vraie data race détectée (0 "Possible data race"
+après correction du bug sur nb_compiles, voir helgrind_report.txt).
+
 ### AI usage
 
 This project was built with Claude as a step-by-step guide, not as a code

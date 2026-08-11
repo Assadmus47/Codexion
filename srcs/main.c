@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/09 04:56:32 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/08/10 06:08:09 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/08/11 12:26:33 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,14 @@ static int	init_simulation(t_simulation *sim, size_t *values,
 static int	init_arrays(t_simulation *sim)
 {
 	sim->dongles = malloc(sizeof(t_dongle) * sim->number_of_coders);
-	sim->coders = malloc(sizeof(t_coder) * sim->number_of_coders);
-	if (!sim->dongles || !sim->coders)
+	if (!sim->dongles)
 		return (0);
+	sim->coders = malloc(sizeof(t_coder) * sim->number_of_coders);;
+	if (!sim->coders)
+	{
+		free(sim->dongles);
+		return (0);
+	}
 	if (!init_all_dongles(sim))
 		return (0);
 	if (!init_all_coders(sim))
