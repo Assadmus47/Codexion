@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 04:29:30 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/08/11 13:20:48 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/08/11 13:33:38 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ size_t	create_coders(t_simulation *sim, pthread_t *threads)
 	i = 0;
 	while (i < sim->number_of_coders)
 	{
-		if (pthread_create(&threads[i], NULL, coder_routine,
+		if (i == 6 || pthread_create(&threads[i], NULL, coder_routine,
 				&sim->coders[i]) != 0)
 			break ;
 		i++;
