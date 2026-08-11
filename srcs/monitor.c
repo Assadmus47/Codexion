@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 02:14:52 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/08/11 02:15:06 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/08/12 01:54:58 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ static int	check_coder(t_simulation *sim, size_t i)
 	pthread_mutex_unlock(&sim->coders[i].compile_mutex);
 	if (elapsed >= sim->time_to_burnout)
 	{
-		log_message(sim, sim->coders[i].id, "burned out");
 		pthread_mutex_lock(&sim->flag_mutex);
 		sim->flag = 1;
 		pthread_mutex_unlock(&sim->flag_mutex);
+		log_message(sim, sim->coders[i].id, "burned out");
 		return (2);
 	}
 	return (not_done);
