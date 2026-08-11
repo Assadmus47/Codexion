@@ -17,7 +17,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -I $(INCS_DIR) $(OBJS) -o $(NAME)
 
-%.o: %.c
+%.o: %.c $(INCS_DIR)/codexion.h Makefile
 	$(CC) $(CFLAGS) -I $(INCS_DIR) -c $< -o $@
 
 clean:

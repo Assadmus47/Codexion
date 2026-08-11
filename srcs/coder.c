@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/09 04:56:12 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/08/11 02:14:44 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/08/11 13:24:01 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@ static int	run_one_cycle(t_coder *coder)
 {
 	if (!acquire_dongles(coder))
 		return (1);
+	if (get_simulation_flag(coder))
+	{
+		release_dongles(coder);
+		return (1);
+	}
 	coder->coder_status = COMPILING;
 	log_message(coder->sim, coder->id, "is compiling");
 	pthread_mutex_lock(&coder->compile_mutex);

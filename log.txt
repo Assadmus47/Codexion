@@ -1,0 +1,573 @@
+1786445422502 2 has taken a dongle 
+1786445422503 3 has taken a dongle 
+1786445422503 3 has taken a dongle 
+1786445422503 3 is compiling 
+1786445422503 1 has taken a dongle 
+1786445422503 3 is debugging 
+1786445422503 2 has taken a dongle 
+1786445422503 2 is compiling 
+1786445422503 3 is refactoring 
+1786445422503 2 is debugging 
+1786445422503 1 has taken a dongle 
+1786445422503 1 is compiling 
+1786445422503 3 has taken a dongle 
+1786445422503 3 has taken a dongle 
+1786445422503 3 is compiling 
+1786445422503 2 is refactoring 
+1786445422503 1 is debugging 
+1786445422503 3 is debugging 
+1786445422503 2 has taken a dongle 
+1786445422503 2 has taken a dongle 
+1786445422503 2 is compiling 
+1786445422503 4 has taken a dongle 
+1786445422503 4 has taken a dongle 
+1786445422503 4 is compiling 
+1786445422503 1 is refactoring 
+1786445422503 3 is refactoring 
+1786445422503 2 is debugging 
+1786445422503 4 is debugging 
+1786445422503 1 has taken a dongle 
+1786445422503 1 has taken a dongle 
+1786445422503 1 is compiling 
+1786445422503 3 has taken a dongle 
+1786445422503 3 has taken a dongle 
+1786445422503 3 is compiling 
+1786445422503 2 is refactoring 
+1786445422503 4 is refactoring 
+1786445422503 1 is debugging 
+1786445422503 3 is debugging 
+1786445422503 2 has taken a dongle 
+1786445422503 2 has taken a dongle 
+1786445422503 2 is compiling 
+1786445422503 4 has taken a dongle 
+1786445422503 4 has taken a dongle 
+1786445422503 4 is compiling 
+1786445422503 1 is refactoring 
+1786445422503 3 is refactoring 
+1786445422503 2 is debugging 
+1786445422503 4 is debugging 
+1786445422503 1 has taken a dongle 
+1786445422503 1 has taken a dongle 
+1786445422503 1 is compiling 
+1786445422503 3 has taken a dongle 
+1786445422503 3 has taken a dongle 
+1786445422503 3 is compiling 
+1786445422503 2 is refactoring 
+1786445422503 4 is refactoring 
+1786445422503 1 is debugging 
+1786445422503 3 is debugging 
+1786445422503 2 has taken a dongle 
+1786445422503 2 has taken a dongle 
+1786445422503 2 is compiling 
+1786445422503 4 has taken a dongle 
+1786445422503 4 has taken a dongle 
+1786445422503 4 is compiling 
+1786445422503 1 is refactoring 
+1786445422503 3 is refactoring 
+1786445422503 2 is debugging 
+1786445422503 3 has taken a dongle 
+1786445422503 2 is refactoring 
+1786445422503 3 has taken a dongle 
+1786445422503 4 is debugging 
+1786445422503 3 is compiling 
+1786445422503 1 has taken a dongle 
+1786445422503 1 has taken a dongle 
+1786445422503 1 is compiling 
+1786445422503 4 is refactoring 
+1786445422503 3 is debugging 
+1786445422503 1 is debugging 
+1786445422503 2 has taken a dongle 
+1786445422503 2 has taken a dongle 
+1786445422503 2 is compiling 
+1786445422503 4 has taken a dongle 
+1786445422503 4 has taken a dongle 
+1786445422503 3 is refactoring 
+1786445422503 4 is compiling 
+1786445422503 1 is refactoring 
+1786445422503 2 is debugging 
+1786445422503 3 has taken a dongle 
+1786445422503 3 has taken a dongle 
+1786445422503 3 is compiling 
+1786445422503 1 has taken a dongle 
+1786445422503 4 is debugging 
+1786445422503 1 has taken a dongle 
+1786445422503 1 is compiling 
+1786445422503 2 is refactoring 
+1786445422503 3 is debugging 
+1786445422503 4 is refactoring 
+1786445422503 1 is debugging 
+1786445422503 2 has taken a dongle 
+1786445422503 2 has taken a dongle 
+1786445422503 2 is compiling 
+1786445422503 3 is refactoring 
+1786445422503 4 has taken a dongle 
+1786445422503 4 has taken a dongle 
+1786445422503 1 is refactoring 
+1786445422503 4 is compiling 
+1786445422503 2 is debugging 
+1786445422503 3 has taken a dongle 
+1786445422503 2 is refactoring 
+1786445422503 4 is debugging 
+1786445422503 3 has taken a dongle 
+1786445422504 3 is compiling 
+1786445422504 1 has taken a dongle 
+1786445422504 1 has taken a dongle 
+1786445422504 1 is compiling 
+1786445422504 4 is refactoring 
+1786445422504 3 is debugging 
+1786445422504 1 is debugging 
+1786445422504 2 has taken a dongle 
+1786445422504 2 has taken a dongle 
+1786445422504 2 is compiling 
+1786445422504 4 has taken a dongle 
+1786445422504 4 has taken a dongle 
+1786445422504 4 is compiling 
+1786445422504 3 is refactoring 
+1786445422504 1 is refactoring 
+1786445422504 2 is debugging 
+1786445422504 4 is debugging 
+1786445422504 3 has taken a dongle 
+1786445422504 3 has taken a dongle 
+1786445422504 3 is compiling 
+1786445422504 1 has taken a dongle 
+1786445422504 1 has taken a dongle 
+1786445422504 1 is compiling 
+1786445422504 2 is refactoring 
+1786445422504 4 is refactoring 
+1786445422504 3 is debugging 
+1786445422504 1 is debugging 
+1786445422504 2 has taken a dongle 
+1786445422504 2 has taken a dongle 
+1786445422504 2 is compiling 
+1786445422504 4 has taken a dongle 
+1786445422504 4 has taken a dongle 
+1786445422504 4 is compiling 
+1786445422504 3 is refactoring 
+1786445422504 1 is refactoring 
+1786445422504 2 is debugging 
+1786445422504 4 is debugging 
+1786445422504 3 has taken a dongle 
+1786445422504 3 has taken a dongle 
+1786445422504 3 is compiling 
+1786445422504 1 has taken a dongle 
+1786445422504 1 has taken a dongle 
+1786445422504 1 is compiling 
+1786445422504 2 is refactoring 
+1786445422504 4 is refactoring 
+1786445422504 3 is debugging 
+1786445422504 1 is debugging 
+1786445422504 2 has taken a dongle 
+1786445422504 2 has taken a dongle 
+1786445422504 2 is compiling 
+1786445422504 4 has taken a dongle 
+1786445422504 4 has taken a dongle 
+1786445422504 4 is compiling 
+1786445422504 1 is refactoring 
+1786445422504 3 is refactoring 
+1786445422504 2 is debugging 
+1786445422504 4 is debugging 
+1786445422504 1 has taken a dongle 
+1786445422504 1 has taken a dongle 
+1786445422504 1 is compiling 
+1786445422504 2 is refactoring 
+1786445422504 3 has taken a dongle 
+1786445422504 3 has taken a dongle 
+1786445422504 3 is compiling 
+1786445422504 4 is refactoring 
+1786445422504 1 is debugging 
+1786445422504 2 has taken a dongle 
+1786445422504 3 is debugging 
+1786445422504 2 has taken a dongle 
+1786445422504 2 is compiling 
+1786445422504 4 has taken a dongle 
+1786445422504 4 has taken a dongle 
+1786445422504 4 is compiling 
+1786445422504 1 is refactoring 
+1786445422504 3 is refactoring 
+1786445422504 2 is debugging 
+1786445422504 4 is debugging 
+1786445422504 1 has taken a dongle 
+1786445422504 1 has taken a dongle 
+1786445422504 1 is compiling 
+1786445422504 3 has taken a dongle 
+1786445422504 3 has taken a dongle 
+1786445422504 3 is compiling 
+1786445422504 2 is refactoring 
+1786445422504 4 is refactoring 
+1786445422504 1 is debugging 
+1786445422504 3 is debugging 
+1786445422504 2 has taken a dongle 
+1786445422504 2 has taken a dongle 
+1786445422504 2 is compiling 
+1786445422504 4 has taken a dongle 
+1786445422504 4 has taken a dongle 
+1786445422504 4 is compiling 
+1786445422504 1 is refactoring 
+1786445422504 2 is debugging 
+1786445422504 3 is refactoring 
+1786445422504 4 is debugging 
+1786445422504 1 has taken a dongle 
+1786445422504 1 has taken a dongle 
+1786445422504 1 is compiling 
+1786445422504 2 is refactoring 
+1786445422504 3 has taken a dongle 
+1786445422504 3 has taken a dongle 
+1786445422504 3 is compiling 
+1786445422504 4 is refactoring 
+1786445422504 1 is debugging 
+1786445422504 2 has taken a dongle 
+1786445422504 3 is debugging 
+1786445422504 2 has taken a dongle 
+1786445422504 2 is compiling 
+1786445422504 4 has taken a dongle 
+1786445422504 4 has taken a dongle 
+1786445422504 4 is compiling 
+1786445422504 1 is refactoring 
+1786445422504 3 is refactoring 
+1786445422504 2 is debugging 
+1786445422504 4 is debugging 
+1786445422504 1 has taken a dongle 
+1786445422504 1 has taken a dongle 
+1786445422504 1 is compiling 
+1786445422504 3 has taken a dongle 
+1786445422504 3 has taken a dongle 
+1786445422504 3 is compiling 
+1786445422504 2 is refactoring 
+1786445422505 4 is refactoring 
+1786445422505 1 is debugging 
+1786445422505 3 is debugging 
+1786445422505 2 has taken a dongle 
+1786445422505 2 has taken a dongle 
+1786445422505 2 is compiling 
+1786445422505 4 has taken a dongle 
+1786445422505 4 has taken a dongle 
+1786445422505 4 is compiling 
+1786445422505 1 is refactoring 
+1786445422505 2 is debugging 
+1786445422505 4 is debugging 
+1786445422505 1 has taken a dongle 
+1786445422505 1 has taken a dongle 
+1786445422505 1 is compiling 
+1786445422505 3 is refactoring 
+1786445422505 4 is refactoring 
+1786445422505 1 is debugging 
+1786445422505 2 is refactoring 
+1786445422505 4 has taken a dongle 
+1786445422505 4 has taken a dongle 
+1786445422505 4 is compiling 
+1786445422505 3 has taken a dongle 
+1786445422505 1 is refactoring 
+1786445422505 2 has taken a dongle 
+1786445422505 4 is debugging 
+1786445422505 1 has taken a dongle 
+1786445422505 4 is refactoring 
+1786445422505 3 has taken a dongle 
+1786445422505 3 is compiling 
+1786445422505 3 is debugging 
+1786445422505 3 is refactoring 
+1786445422505 2 has taken a dongle 
+1786445422505 2 is compiling 
+1786445422505 2 is debugging 
+1786445422505 1 has taken a dongle 
+1786445422505 1 is compiling 
+1786445422505 3 has taken a dongle 
+1786445422505 3 has taken a dongle 
+1786445422505 3 is compiling 
+1786445422505 1 is debugging 
+1786445422505 2 is refactoring 
+1786445422505 4 has taken a dongle 
+1786445422505 3 is debugging 
+1786445422505 4 has taken a dongle 
+1786445422505 4 is compiling 
+1786445422505 2 has taken a dongle 
+1786445422505 2 has taken a dongle 
+1786445422505 2 is compiling 
+1786445422505 1 is refactoring 
+1786445422505 3 is refactoring 
+1786445422505 4 is debugging 
+1786445422505 1 has taken a dongle 
+1786445422505 2 is debugging 
+1786445422505 3 has taken a dongle 
+1786445422505 3 has taken a dongle 
+1786445422505 3 is compiling 
+1786445422505 1 has taken a dongle 
+1786445422505 1 is compiling 
+1786445422505 4 is refactoring 
+1786445422505 2 is refactoring 
+1786445422505 3 is debugging 
+1786445422505 1 is debugging 
+1786445422505 4 has taken a dongle 
+1786445422505 4 has taken a dongle 
+1786445422505 4 is compiling 
+1786445422505 2 has taken a dongle 
+1786445422505 2 has taken a dongle 
+1786445422505 2 is compiling 
+1786445422505 1 is refactoring 
+1786445422505 3 is refactoring 
+1786445422505 4 is debugging 
+1786445422505 2 is debugging 
+1786445422505 3 has taken a dongle 
+1786445422505 3 has taken a dongle 
+1786445422505 3 is compiling 
+1786445422505 4 is refactoring 
+1786445422505 1 has taken a dongle 
+1786445422505 1 has taken a dongle 
+1786445422505 1 is compiling 
+1786445422505 2 is refactoring 
+1786445422505 3 is debugging 
+1786445422505 1 is debugging 
+1786445422505 4 has taken a dongle 
+1786445422505 4 has taken a dongle 
+1786445422505 4 is compiling 
+1786445422505 2 has taken a dongle 
+1786445422505 2 has taken a dongle 
+1786445422505 2 is compiling 
+1786445422505 3 is refactoring 
+1786445422506 1 is refactoring 
+1786445422506 4 is debugging 
+1786445422506 2 is debugging 
+1786445422506 3 has taken a dongle 
+1786445422506 3 has taken a dongle 
+1786445422506 3 is compiling 
+1786445422506 1 has taken a dongle 
+1786445422506 1 has taken a dongle 
+1786445422506 1 is compiling 
+1786445422506 4 is refactoring 
+1786445422506 2 is refactoring 
+1786445422506 3 is debugging 
+1786445422506 1 is debugging 
+1786445422506 4 has taken a dongle 
+1786445422506 4 has taken a dongle 
+1786445422506 4 is compiling 
+1786445422506 3 is refactoring 
+1786445422506 2 has taken a dongle 
+1786445422506 2 has taken a dongle 
+1786445422506 2 is compiling 
+1786445422506 1 is refactoring 
+1786445422506 4 is debugging 
+1786445422506 2 is debugging 
+1786445422506 3 has taken a dongle 
+1786445422506 3 has taken a dongle 
+1786445422506 3 is compiling 
+1786445422506 1 has taken a dongle 
+1786445422506 1 has taken a dongle 
+1786445422506 1 is compiling 
+1786445422506 4 is refactoring 
+1786445422506 2 is refactoring 
+1786445422506 3 is debugging 
+1786445422506 1 is debugging 
+1786445422506 4 has taken a dongle 
+1786445422506 4 has taken a dongle 
+1786445422506 4 is compiling 
+1786445422506 2 has taken a dongle 
+1786445422506 2 has taken a dongle 
+1786445422506 2 is compiling 
+1786445422506 3 is refactoring 
+1786445422506 1 is refactoring 
+1786445422506 4 is debugging 
+1786445422506 2 is debugging 
+1786445422506 3 has taken a dongle 
+1786445422506 3 has taken a dongle 
+1786445422506 3 is compiling 
+1786445422506 1 has taken a dongle 
+1786445422506 1 has taken a dongle 
+1786445422506 1 is compiling 
+1786445422506 4 is refactoring 
+1786445422506 3 is debugging 
+1786445422506 2 is refactoring 
+1786445422506 1 is debugging 
+1786445422506 4 has taken a dongle 
+1786445422506 4 has taken a dongle 
+1786445422506 4 is compiling 
+1786445422506 3 is refactoring 
+1786445422506 2 has taken a dongle 
+1786445422506 2 has taken a dongle 
+1786445422506 2 is compiling 
+1786445422506 1 is refactoring 
+1786445422506 4 is debugging 
+1786445422506 2 is debugging 
+1786445422506 3 has taken a dongle 
+1786445422506 3 has taken a dongle 
+1786445422506 3 is compiling 
+1786445422506 1 has taken a dongle 
+1786445422506 1 has taken a dongle 
+1786445422506 1 is compiling 
+1786445422506 4 is refactoring 
+1786445422506 2 is refactoring 
+1786445422506 3 is debugging 
+1786445422506 1 is debugging 
+1786445422506 4 has taken a dongle 
+1786445422506 4 has taken a dongle 
+1786445422506 4 is compiling 
+1786445422506 2 has taken a dongle 
+1786445422506 3 is refactoring 
+1786445422506 2 has taken a dongle 
+1786445422506 2 is compiling 
+1786445422506 1 is refactoring 
+1786445422506 4 is debugging 
+1786445422506 1 has taken a dongle 
+1786445422506 1 has taken a dongle 
+1786445422506 1 is compiling 
+1786445422506 2 is debugging 
+1786445422506 3 has taken a dongle 
+1786445422506 3 has taken a dongle 
+1786445422506 3 is compiling 
+1786445422506 4 is refactoring 
+1786445422506 1 is debugging 
+1786445422506 2 is refactoring 
+1786445422506 3 is debugging 
+1786445422506 4 has taken a dongle 
+1786445422506 4 has taken a dongle 
+1786445422506 4 is compiling 
+1786445422506 1 is refactoring 
+1786445422506 3 is refactoring 
+1786445422506 2 has taken a dongle 
+1786445422506 2 has taken a dongle 
+1786445422506 2 is compiling 
+1786445422506 4 is debugging 
+1786445422506 1 has taken a dongle 
+1786445422506 2 is debugging 
+1786445422506 1 has taken a dongle 
+1786445422506 1 is compiling 
+1786445422506 3 has taken a dongle 
+1786445422506 3 has taken a dongle 
+1786445422506 3 is compiling 
+1786445422506 4 is refactoring 
+1786445422506 1 is debugging 
+1786445422506 2 is refactoring 
+1786445422506 3 is debugging 
+1786445422506 4 has taken a dongle 
+1786445422506 4 has taken a dongle 
+1786445422506 4 is compiling 
+1786445422507 1 is refactoring 
+1786445422507 3 is refactoring 
+1786445422507 2 has taken a dongle 
+1786445422507 4 is debugging 
+1786445422507 2 has taken a dongle 
+1786445422507 2 is compiling 
+1786445422507 1 has taken a dongle 
+1786445422507 4 is refactoring 
+1786445422507 2 is debugging 
+1786445422507 1 has taken a dongle 
+1786445422507 1 is compiling 
+1786445422507 3 has taken a dongle 
+1786445422507 3 has taken a dongle 
+1786445422507 3 is compiling 
+1786445422507 1 is debugging 
+1786445422507 2 is refactoring 
+1786445422507 3 is debugging 
+1786445422507 4 has taken a dongle 
+1786445422507 4 has taken a dongle 
+1786445422507 4 is compiling 
+1786445422507 1 is refactoring 
+1786445422507 3 is refactoring 
+1786445422507 2 has taken a dongle 
+1786445422507 2 has taken a dongle 
+1786445422507 2 is compiling 
+1786445422507 4 is debugging 
+1786445422507 1 has taken a dongle 
+1786445422507 4 is refactoring 
+1786445422507 2 is debugging 
+1786445422507 1 has taken a dongle 
+1786445422507 1 is compiling 
+1786445422507 3 has taken a dongle 
+1786445422507 3 has taken a dongle 
+1786445422507 3 is compiling 
+1786445422507 1 is debugging 
+1786445422507 2 is refactoring 
+1786445422507 4 has taken a dongle 
+1786445422507 4 has taken a dongle 
+1786445422507 3 is debugging 
+1786445422507 4 is compiling 
+1786445422507 1 is refactoring 
+1786445422507 2 has taken a dongle 
+1786445422507 2 has taken a dongle 
+1786445422507 2 is compiling 
+1786445422507 3 is refactoring 
+1786445422507 4 is debugging 
+1786445422507 1 has taken a dongle 
+1786445422507 4 is refactoring 
+1786445422507 2 is debugging 
+1786445422507 1 has taken a dongle 
+1786445422507 3 has taken a dongle 
+1786445422507 3 has taken a dongle 
+1786445422507 3 is compiling 
+1786445422507 1 is compiling 
+1786445422507 2 is refactoring 
+1786445422507 3 is debugging 
+1786445422507 1 is debugging 
+1786445422507 4 has taken a dongle 
+1786445422507 4 has taken a dongle 
+1786445422507 4 is compiling 
+1786445422507 2 has taken a dongle 
+1786445422507 2 has taken a dongle 
+1786445422507 2 is compiling 
+1786445422507 1 is refactoring 
+1786445422507 3 is refactoring 
+1786445422507 4 is debugging 
+1786445422507 2 is debugging 
+1786445422507 4 is refactoring 
+1786445422507 1 has taken a dongle 
+1786445422507 1 has taken a dongle 
+1786445422507 1 is compiling 
+1786445422507 2 is refactoring 
+1786445422507 1 is debugging 
+1786445422507 4 has taken a dongle 
+1786445422507 4 has taken a dongle 
+1786445422507 4 is compiling 
+1786445422507 3 has taken a dongle 
+1786445422507 2 has taken a dongle 
+1786445422507 4 is debugging 
+1786445422507 3 has taken a dongle 
+1786445422507 3 is compiling 
+1786445422507 4 is refactoring 
+1786445422507 3 is debugging 
+1786445422507 2 has taken a dongle 
+1786445422507 2 is compiling 
+1786445422507 1 is refactoring 
+1786445422507 4 has taken a dongle 
+1786445422507 4 has taken a dongle 
+1786445422507 4 is compiling 
+1786445422507 3 is refactoring 
+1786445422507 2 is debugging 
+1786445422507 4 is debugging 
+1786445422507 1 has taken a dongle 
+1786445422507 1 has taken a dongle 
+1786445422507 1 is compiling 
+1786445422507 3 has taken a dongle 
+1786445422507 3 has taken a dongle 
+1786445422507 3 is compiling 
+1786445422507 2 is refactoring 
+1786445422507 4 is refactoring 
+1786445422507 1 is debugging 
+1786445422507 3 is debugging 
+1786445422507 2 has taken a dongle 
+1786445422507 2 has taken a dongle 
+1786445422507 2 is compiling 
+1786445422507 4 has taken a dongle 
+1786445422507 4 has taken a dongle 
+1786445422507 4 is compiling 
+1786445422507 1 is refactoring 
+1786445422507 3 is refactoring 
+1786445422507 2 is debugging 
+1786445422508 4 is debugging 
+1786445422508 1 has taken a dongle 
+1786445422508 1 has taken a dongle 
+1786445422508 1 is compiling 
+1786445422508 3 has taken a dongle 
+1786445422508 3 has taken a dongle 
+1786445422508 3 is compiling 
+1786445422508 2 is refactoring 
+1786445422508 4 is refactoring 
+1786445422508 1 is debugging 
+1786445422508 3 is debugging 
+1786445422508 2 has taken a dongle 
+1786445422508 2 has taken a dongle 
+1786445422508 2 is compiling 
+1786445422508 4 has taken a dongle 
+1786445422508 4 has taken a dongle 
+1786445422508 4 is compiling 
+1786445422508 1 is refactoring 
+1786445422508 3 is refactoring 
+1786445422508 2 is debugging 
+1786445422508 4 is debugging 
