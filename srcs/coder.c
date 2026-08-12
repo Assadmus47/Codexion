@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/09 04:56:12 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/08/11 13:24:01 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/08/12 02:45:00 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void	*coder_routine(void *arg)
 	t_coder	*coder;
 
 	coder = (t_coder *)arg;
+	usleep_ms((size_t)coder->id % 10);
 	while (!get_simulation_flag(coder))
 	{
 		if (run_one_cycle(coder))
