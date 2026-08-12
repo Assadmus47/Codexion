@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/09 04:56:32 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/08/12 01:28:02 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/08/12 04:06:31 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,8 @@ static void	run_simulation(t_simulation *sim)
 	}
 	else
 	{
+		fprintf(stderr, "Warning: only %zu/%zu coder threads could be "
+			"created, stopping simulation\n", info[0], sim->number_of_coders);
 		pthread_mutex_lock(&sim->flag_mutex);
 		sim->flag = 1;
 		pthread_mutex_unlock(&sim->flag_mutex);
