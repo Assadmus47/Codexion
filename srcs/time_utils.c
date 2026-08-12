@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/09 04:56:41 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/08/12 02:06:53 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/08/12 04:34:03 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,22 @@ struct timespec	get_future_timespec(size_t ms)
 		ts.tv_nsec -= 1000000000;
 	}
 	return (ts);
+}
+
+void	interruptible_sleep(t_coder *coder, size_t duration_ms)
+{
+	size_t	elapsed;
+	size_t	chunk;
+
+	elapsed = 0;
+	while (elapsed < duration_ms)
+	{
+		if (get_simulation_flag(coder))
+			return ;
+		chunk = duration_ms - elapsed;
+		if (chunk > 50)
+			chunk = 50;
+		usleep_ms(chunk);
+		elapsed += chunk;
+	}
 }

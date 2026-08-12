@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/09 04:56:32 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/08/12 04:06:31 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/08/12 04:28:38 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,15 +94,18 @@ static void	run_simulation(t_simulation *sim)
 		cleanup(sim, sim->number_of_coders, sim->number_of_coders);
 		return ;
 	}
-	info[0] = create_coders(sim, threads);
 	info[1] = 0;
-	monitor_thread = 0;
-	if (info[0] == sim->number_of_coders)
+	if (pthread_create(&monitor_thread, NULL, monitor_routine, sim) != 0)
 	{
-		if (pthread_create(&monitor_thread, NULL, monitor_routine, sim) == 0)
-			info[1] = 1;
+		fprintf(stderr, "Warning: monitor thread could not be created, "
+			"aborting simulation\n");
+		free(threads);
+		cleanup(sim, sim->number_of_coders, sim->number_of_coders);
+		return ;
 	}
-	else
+	info[1] = 1;
+	info[0] = create_coders(sim, threads);
+	if (info[0] != sim->number_of_coders)
 	{
 		fprintf(stderr, "Warning: only %zu/%zu coder threads could be "
 			"created, stopping simulation\n", info[0], sim->number_of_coders);

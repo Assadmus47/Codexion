@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/09 04:55:58 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/08/12 03:51:39 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/08/12 04:34:38 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int				parse_args(int argc, char **argv, size_t *values);
 size_t			get_timestamp_ms(void);
 struct timespec	get_future_timespec(size_t ms);
 void			usleep_ms(size_t ms);
+void			interruptible_sleep(t_coder *coder, size_t duration_ms);
 
 /* logging.c */
 void			log_message(t_simulation *sim, int coder_id, char *message);

@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/09 04:56:12 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/08/12 02:45:00 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/08/12 04:34:18 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int	run_one_cycle(t_coder *coder)
 	pthread_mutex_lock(&coder->compile_mutex);
 	coder->last_compile_start = get_timestamp_ms();
 	pthread_mutex_unlock(&coder->compile_mutex);
-	usleep_ms(coder->sim->time_to_compile);
+	interruptible_sleep(coder, coder->sim->time_to_compile);
 	pthread_mutex_lock(&coder->compile_mutex);
 	coder->nb_compiles++;
 	pthread_mutex_unlock(&coder->compile_mutex);
@@ -45,12 +45,12 @@ static int	run_one_cycle(t_coder *coder)
 		return (1);
 	coder->coder_status = DEBUGGING;
 	log_message(coder->sim, coder->id, "is debugging");
-	usleep_ms(coder->sim->time_to_debug);
+	interruptible_sleep(coder, coder->sim->time_to_debug);
 	if (get_simulation_flag(coder))
 		return (1);
 	coder->coder_status = REFACTORING;
 	log_message(coder->sim, coder->id, "is refactoring");
-	usleep_ms(coder->sim->time_to_refactor);
+	interruptible_sleep(coder, coder->sim->time_to_refactor);
 	return (get_simulation_flag(coder));
 }
 
