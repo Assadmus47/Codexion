@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/09 04:56:21 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/08/09 04:56:23 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/08/12 03:55:47 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	release_dongle(t_dongle *dongle)
 {
 	pthread_mutex_lock(&dongle->mutex);
 	dongle->is_taken = 0;
+	dongle->ever_used = 1;
 	dongle->timestamp = get_timestamp_ms();
 	pthread_cond_broadcast(&dongle->cond);
 	pthread_mutex_unlock(&dongle->mutex);

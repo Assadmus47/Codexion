@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/09 04:55:58 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/08/11 00:15:19 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/08/12 03:51:39 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,10 +100,11 @@ typedef struct s_dongle
 {
 	int				id;
 	int				is_taken;
+	int				ever_used;
 	size_t			timestamp;
 	pthread_mutex_t	mutex;
-	t_heap			waiting_heap;
 	pthread_cond_t	cond;
+	t_heap			waiting_heap;
 }	t_dongle;
 
 typedef struct s_coder

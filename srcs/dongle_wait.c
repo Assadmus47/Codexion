@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/09 04:56:18 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/08/09 04:56:19 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/08/12 03:56:35 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ static int	is_dongle_ready(t_coder *coder, t_dongle *dongle)
 	if (dongle->waiting_heap.size > 0
 		&& dongle->waiting_heap.nodes[0].coder->id != coder->id)
 		return (0);
+	if (!dongle->ever_used)
+		return (1);
 	now = get_timestamp_ms();
 	if (now - dongle->timestamp < coder->sim->dongle_cooldown)
 		return (0);

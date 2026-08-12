@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 04:29:30 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/08/12 01:37:54 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/08/12 03:55:02 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	init_all_dongles(t_simulation *sim)
 	{
 		sim->dongles[i].id = (int)i;
 		sim->dongles[i].is_taken = 0;
+		sim->dongles[i].ever_used = 0;
 		sim->dongles[i].timestamp = 0;
 		if (pthread_mutex_init(&sim->dongles[i].mutex, NULL) != 0)
 		{
